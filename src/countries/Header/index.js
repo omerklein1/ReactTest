@@ -5,8 +5,8 @@ import Search from './search';
 class Header extends Component {
     render (){
         return <div className='title-nav'>
-            <Title />
-            <Search />
+            <Title {...this.props}/>
+            <Search change={this.props.change}/>
             </div>
         
     }

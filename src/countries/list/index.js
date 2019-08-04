@@ -4,7 +4,7 @@ import ListItem from './listItem';
 class List extends Component {
     render (){
         return <ul>
-            <ListItem />
+            <ListItem {...this.props}/>
             </ul>
         
     }

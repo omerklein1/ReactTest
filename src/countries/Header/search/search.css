@@ -1,0 +1,14 @@
+input {
+    display: inline;
+    margin-left: 140px;
+    border-radius: 5px;
+    border-color: transparent;
+    position: absolute;
+    right: 5%;
+    bottom: 28px;
+  }
+
+  .title-nav {
+    position: fixed;
+    width: 50%;
+  }

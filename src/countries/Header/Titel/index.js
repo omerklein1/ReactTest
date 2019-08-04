@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './Title.css'
 
 class Title extends Component {
 
     render() {
         return <>
 <h1>Countries </h1>
-<span>()</span>
+<span>({this.props.countriesList.length})</span>
         </>
     }
 }

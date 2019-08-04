@@ -1,0 +1,45 @@
+li {
+    background-color: white;
+    border: 3px solid #9e9e9e45;
+    height: 70px;
+  }
+  
+  li div {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: -webkit-inline-box;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-color: black;
+    border-style: solid;
+    margin: 8px;
+  }
+  
+  h4 {
+    display: inline;
+    position: relative;
+    bottom: 40px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 10px;
+    height: -webkit-fill-available;
+    overflow-y: scroll;
+    padding: 0px;
+  }
+  
+  h5 {
+    position: relative;
+    bottom: 63px;
+    left: 76px;
+    color: gray;
+    font-family: 'Indie Flower', cursive;
+  }
+  ::-webkit-scrollbar {
+    /* width: 0px; */
+    background: transparent;
+  }
+  
