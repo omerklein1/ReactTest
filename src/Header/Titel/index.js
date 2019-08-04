@@ -1,3 +1,13 @@
 import React, { Component } from 'react';
 
-export default (prop) => <h1>Countries </h1> ;
+class Title extends Component {
+
+    render() {
+        return <>
+<h1>Countries </h1>
+<span>()</span>
+        </>
+    }
+}
+
+export default Title;

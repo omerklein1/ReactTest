@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Title from './Titel';
+import Search from './search';
 // z
 class Header extends Component {
     render (){
-        return <header>
+        return <div className='title-nav'>
             <Title />
-            </header>
+            <Search />
+            </div>
         
     }
 }
