@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import axios from 'axios'
 import Header from './Header';
 import List from './list';
+import { initList } from '../actions'
+import './countries.css'
+import { connect } from 'react-redux';
+
 
 class Countries extends Component {
     constructor(props) {
@@ -11,12 +14,8 @@ class Countries extends Component {
             loading: true
         }
     }
-    async componentDidMount() {
-        axios.get('https://restcountries.eu/rest/v2/all')
-            .then(res => {
-                this.setState({ loading: false, countriesList: res.data })
-            })
-            .catch(error => console.log(error.message))
+    componentDidMount() {
+        this.props.initList()
     }
 
     onTextChange = (text) => {
@@ -24,17 +23,20 @@ class Countries extends Component {
     }
 
     render() {
-        const { loading, countriesList, text } = this.state
+        const { countriesList } = this.props,
+            { text } = this.state;
         console.log(this.state)
 
-        return loading ? "טוען" : <main className='countries'>
-            <Header countriesList={countriesList} change={this.onTextChange} />
+        return countriesList ? <main className='countries'>
+            <Header  change={this.onTextChange} />
             <br></br>
             <br></br>
             <br></br>
-            <List countriesList={countriesList} text={text}/>
-        </main>
+            <List  />
+        </main> : 'טוען'
     }
 }
 
-export default Countries
+export default connect(state => ({
+    countriesList: state.countriesList
+}), { initList })(Countries)

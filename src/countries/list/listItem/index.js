@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './listItem.css'
 
 class ListItem extends Component {
@@ -8,7 +9,7 @@ class ListItem extends Component {
         const {countriesList, text=''} = this.props
         return <>
         
-        {countriesList.filter(c => c.name.startsWith(text))
+        {countriesList.filter(c => c.name.toLowerCase().startsWith(text))
             .map(list => <li id={list.name}>
             <div style={{backgroundImage: `url(${list.flag})`}}></div>
             <h4>{list.name}</h4>
@@ -19,4 +20,9 @@ class ListItem extends Component {
     }
 }
 
-export default ListItem;
+export default connect(state => ({
+    countriesList: state.countriesList,
+    text: state.change
+}), {})(ListItem);
+
+;
